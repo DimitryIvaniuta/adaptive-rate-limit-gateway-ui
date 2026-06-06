@@ -1,0 +1,41 @@
+{
+  "name": "adaptive-rate-limit-gateway-ui",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Production-grade React 19.2 admin console for adaptive API gateway rate limiting and abuse operations.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "security:deps": "npm audit --audit-level=moderate",
+    "validate": "npm run typecheck && npm run test && npm run build && npm run test:e2e",
+    "test:e2e:system": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium playwright test"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "^25.9.1",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "jsdom": "29.1.1",
+    "typescript": "6.0.3",
+    "vite": "8.0.14",
+    "vitest": "4.1.7"
+  }
+}
